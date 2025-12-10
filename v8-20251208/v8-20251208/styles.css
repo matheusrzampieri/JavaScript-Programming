@@ -1,0 +1,139 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* original do jogo */
+#canvas1{
+  border:5px solid #000;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  max-width:100%;
+  max-height:100%;
+  background:#222; /* adicionado pra combinar com tema novo */
+}
+
+#player,
+#layer1,#layer2,#layer3,#layer4,#layer5,
+#enemy_fly,#enemy_plant,#enemy_spider,
+#fire,#collisionAnimation,#lives{
+  display:none;
+}
+
+/* sidebar adicionado */
+body,html{
+  height:100%;
+  background:#0b0b0b;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:#eee;
+}
+
+#gameSidebar{
+  position:absolute;
+  top:50%;
+  left:calc(50% + 470px);
+  transform:translateY(-50%);
+  width:220px;
+  background:#111;
+  border-radius:10px;
+  padding:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  z-index:2000;
+}
+
+@media (max-width:1200px){
+  #gameSidebar{ left:calc(50% + 360px); }
+}
+
+@media (max-width:1000px){
+  #gameSidebar{
+    left:auto;
+    right:12px;
+    top:12px;
+    transform:none;
+    position:fixed;
+  }
+  #canvas1{ max-width:calc(100vw - 260px); }
+}
+
+/* botões e painéis */
+.sb-header h1{font-size:18px;margin-bottom:8px}
+
+.sb-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.sb-btn{
+  padding:10px;
+  border-radius:8px;
+  background:#222;
+  border:1px solid #333;
+  color:#fff;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.sb-btn:hover{background:#2a2a2a}
+
+.sb-panel{
+  background:rgba(255,255,255,0.03);
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.05);
+  margin-top:8px;
+}
+
+.hidden{display:none}
+
+.skin-select{
+  background:#222;
+  border:1px solid #333;
+  padding:10px;
+  border-radius:8px;
+  cursor:pointer;
+  width:100%;
+  font-weight:600;
+  text-align:center;
+}
+
+.skin-select:hover{
+  background:#2a2a2a;
+}
+
+.sb-small{
+  padding:8px;
+  border-radius:6px;
+  background:#161616;
+  border:1px solid #333;
+  color:#fff;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.skin-select{
+  background:#222;
+  border:1px solid #333;
+  padding:10px;
+  border-radius:8px;
+  cursor:pointer;
+  width:100%;
+  font-weight:600;
+  text-align:center;
+  color:#eee;  
+}
+
+.sb-panel-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:8px;
+  gap:8px;
+}
+
+.sb-footer{
+  opacity:0.7;
+  font-size:12px;
+  margin-top:10px;
+  text-align:center;
+}
